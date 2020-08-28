@@ -4,7 +4,6 @@ class Employee extends Component {
     state = {
         firstName: "",
         lastName: "",
-        officeNumber: "",
         role: "",
         phoneNumber: ""
     };
@@ -21,6 +20,13 @@ class Employee extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         console.log(this.state)
+
+        this.setState({
+            firstName: "",
+            lastName: "",
+            role: "",
+            phoneNumber: ""
+        });
     };
 
     render() {
