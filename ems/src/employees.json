@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "firstName": "Joe",
+        "lastName": "Shmoe",
+        "role": "Manager",
+        "phoneNumber": "555-555-5555",
+        "emailAddress": "johnshmoe@gmail.com"
+    },
+    {
+        "firstName": "Jill",
+        "lastName": "Smith",
+        "role": "Assistant Manager",
+        "phoneNumber": "555-555-5555",
+        "emailAddress": "jillsmith@gmail.com"
+    },
+    {
+        "firstName": "Jason",
+        "lastName": "Lee",
+        "role": "Sales",
+        "phoneNumber": "555-555-5555",
+        "emailAddress": "jasonlee@gmail.com"
+    },
+    {
+        "firstName": "Jacob",
+        "lastName": "Miller",
+        "role": "Sales",
+        "phoneNumber": "555-555-5555",
+        "emailAddress": "jacobmiller@gmail.com"
+    },
+    {
+        "firstName": "Sarah",
+        "lastName": "Smalls",
+        "role": "Sales",
+        "phoneNumber": "555-555-5555",
+        "emailAddress": "sarahsmalls@gmail.com"
+    }
+]
