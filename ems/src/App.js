@@ -3,17 +3,24 @@ import Wrapper from "./components/Wrapper";
 import EmployeeCard from "./components/EmployeeCard";
 import employees from "./employees.json"
 
-const App = () => {
-  return (
-    <Wrapper>
+class App extends React.Component {
+
+  state = {
+    employees
+  };
+
+  render() {
+    return (
+      this.state.employees.map(employee => (<Wrapper>
       <EmployeeCard
-      name = {employees[0].firstName + " " + employees[0].lastName}
-      role = {employees[0].role}
-      phoneNumber = {employees[0].phoneNumber}
-      emailAddress= {employees[0].emailAddress}
-      />
-    </Wrapper>    
-  );
-}
+      name = {employee.firstName + " " + employee.lastName}
+      role = {employee.role}
+      phoneNumber = {employee.phoneNumber}
+      emailAddress= {employee.emailAddress}
+      /></Wrapper>
+      ))   
+    );
+  };  
+};
 
 export default App;
