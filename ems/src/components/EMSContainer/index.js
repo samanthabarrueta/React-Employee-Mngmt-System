@@ -14,10 +14,6 @@ class EMSContainer extends Component {
     search: ""
   };
 
-//   componentDidMount() {
-//     this.setState({ employees })
-//   }
-
   handleInputChange = event => {
     event.preventDefault();
     const value = event.target.value;
@@ -26,16 +22,19 @@ class EMSContainer extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log("searched:" + this.state.search)
+    console.log("searched:" + this.state.search)  
+    this.searchEmployees(this.state.search)
+    
+  }
 
-    const searchedEmployee = this.state.employees.filter(
-        (employee) => {
-            return employee.firstName.toLowerCase() === this.state.search.toLowerCase();
-        }
+  searchEmployees = () => {
+    let searchedEmployee = employees.filter(
+      (employee) => {
+          return employee.firstName.toLowerCase() === this.state.search.toLowerCase();
+      }
     );
     console.log(searchedEmployee);
-    
-    
+    this.setState ({ employees: searchedEmployee })
   }
 
   render() {
