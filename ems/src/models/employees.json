@@ -10,7 +10,7 @@
     {
         "key": 2,
         "firstName": "Joe",
-        "lastName": "Smith",
+        "lastName": "Adams",
         "role": "Assistant Manager",
         "phoneNumber": "555-555-5555",
         "emailAddress": "jillsmith@gmail.com"

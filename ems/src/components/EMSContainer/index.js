@@ -4,14 +4,13 @@ import { Container, Row, Col } from 'react-bootstrap';
 import employees from "../.././models/employees.json";
 import SearchForm from "../SearchForm";
 import EmployeeCard from "../EmployeeDetails";
-//import SortButton from "../SortButton";
+import SortButton from "../SortButton";
 import ViewAllButton from "../ViewAllButton";
 
 class EMSContainer extends Component {
 
   state = {
     employees: employees,
-    results: {},
     search: ""
   };
 
@@ -42,10 +41,13 @@ class EMSContainer extends Component {
   }
 
   sortEmployees = () => {
-    const sortedEmployee = [...employees].sort((a, b) => b[employees.firstName] - a[employees.firstName]);
-    //let sortedEmployee = this.state.employees.sort(employees.firstName)
-    console.log(sortedEmployee);
-    this.setState ({ employees: sortedEmployee })
+    const sortedEmployees = this.state.employees.sort(function(a, b) {
+      if(a.firstName.toLowerCase() < b.firstName.toLowerCase()) return -1;
+      if(a.firstName.toLowerCase() > b.firstName.toLowerCase()) return 1;
+      return 0;})  
+        
+      console.log(sortedEmployees);
+      this.setState ({ employees: sortedEmployees });
   }
 
   render() {
@@ -57,9 +59,15 @@ class EMSContainer extends Component {
             value={this.state.search}
             handleInputChange={this.handleInputChange}
             handleFormSubmit={this.handleFormSubmit}
-            /> <ViewAllButton 
+            /> 
+            
+            <Row>
+            <ViewAllButton 
             viewAllEmployees={this.viewAllEmployees}
-            />
+            /><SortButton 
+            sortEmployees={this.sortEmployees}
+            /> 
+            </Row>
             
             
             {this.state.employees.map(employeeResults => (<EmployeeCard
@@ -78,9 +86,3 @@ class EMSContainer extends Component {
 };
 
 export default EMSContainer;
-
-
-
-{/* <SortButton 
-        sortEmployees={this.sortEmployees}
-        />  */}

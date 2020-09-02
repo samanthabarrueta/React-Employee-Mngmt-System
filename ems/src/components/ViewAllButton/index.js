@@ -3,8 +3,8 @@ import './index.css';
 
 function ViewAll(props) {
   return (
-    <button onClick={props.sortEmployees} className="btn btn-primary">
-        Sort Alphabetically
+    <button onClick={props.viewAllEmployees} className="btn btn-primary">
+      View All Employees
     </button>
   );
 }
