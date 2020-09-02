@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import Wrapper from "../Wrapper";
-import Container from "../Container";
-import Row from "../Row";
-import employees from "../.././models/employees.json"
+import { Container, Row, Col } from 'react-bootstrap';
+import employees from "../.././models/employees.json";
 import SearchForm from "../SearchForm";
 import EmployeeCard from "../EmployeeDetails";
+//import SortButton from "../SortButton";
+import ViewAllButton from "../ViewAllButton";
 
 class EMSContainer extends Component {
 
@@ -23,8 +24,7 @@ class EMSContainer extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     console.log("searched:" + this.state.search)  
-    this.searchEmployees(this.state.search)
-    
+    this.searchEmployees(this.state.search)    
   }
 
   searchEmployees = () => {
@@ -37,28 +37,50 @@ class EMSContainer extends Component {
     this.setState ({ employees: searchedEmployee })
   }
 
+  viewAllEmployees = () => {
+    this.setState ({ employees: employees })
+  }
+
+  sortEmployees = () => {
+    const sortedEmployee = [...employees].sort((a, b) => b[employees.firstName] - a[employees.firstName]);
+    //let sortedEmployee = this.state.employees.sort(employees.firstName)
+    console.log(sortedEmployee);
+    this.setState ({ employees: sortedEmployee })
+  }
+
   render() {
     return (   
       <Container>
-        <Row>
-        <SearchForm 
-        value={this.state.search}
-        handleInputChange={this.handleInputChange}
-        handleFormSubmit={this.handleFormSubmit}
-        />
-        </Row><Row>
-        {this.state.employees.map(employeeResults => (<Wrapper>
-        <EmployeeCard
-        name = {employeeResults.firstName + " " + employeeResults.lastName}
-        role = {employeeResults.role}
-        phoneNumber = {employeeResults.phoneNumber}
-        emailAddress= {employeeResults.emailAddress}
-        key= {employeeResults.id}
-        /></Wrapper> ))}
-        </Row>
-      </Container>   
+        <Wrapper>        
+          <Col>
+            <SearchForm 
+            value={this.state.search}
+            handleInputChange={this.handleInputChange}
+            handleFormSubmit={this.handleFormSubmit}
+            /> <ViewAllButton 
+            viewAllEmployees={this.viewAllEmployees}
+            />
+            
+            
+            {this.state.employees.map(employeeResults => (<EmployeeCard
+            name = {employeeResults.firstName + " " + employeeResults.lastName}
+            role = {employeeResults.role}
+            phoneNumber = {employeeResults.phoneNumber}
+            emailAddress= {employeeResults.emailAddress}
+            key= {employeeResults.id}
+            /> )) }
+          </Col>
+        </Wrapper>
+      </Container>  
+      
     );
   };  
 };
 
 export default EMSContainer;
+
+
+
+{/* <SortButton 
+        sortEmployees={this.sortEmployees}
+        />  */}
