@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "key": 1,
         "firstName": "Joe",
         "lastName": "Shmoe",
         "role": "Manager",
@@ -8,13 +8,15 @@
         "emailAddress": "johnshmoe@gmail.com"
     },
     {
-        "firstName": "Jill",
+        "key": 2,
+        "firstName": "Joe",
         "lastName": "Smith",
         "role": "Assistant Manager",
         "phoneNumber": "555-555-5555",
         "emailAddress": "jillsmith@gmail.com"
     },
     {
+        "key": 3,
         "firstName": "Jason",
         "lastName": "Lee",
         "role": "Sales",
@@ -22,6 +24,7 @@
         "emailAddress": "jasonlee@gmail.com"
     },
     {
+        "key": 4,
         "firstName": "Jacob",
         "lastName": "Miller",
         "role": "Sales",
@@ -29,6 +32,7 @@
         "emailAddress": "jacobmiller@gmail.com"
     },
     {
+        "key": 5,
         "firstName": "Sarah",
         "lastName": "Smalls",
         "role": "Sales",

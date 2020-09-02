@@ -1,7 +1,7 @@
 import React from "react";
 import './index.css';
 
-function ViewAll(props) {
+function SortAZ(props) {
   return (
     <button onClick={props.sortEmployees} className="btn btn-primary">
         Sort Alphabetically
@@ -9,4 +9,4 @@ function ViewAll(props) {
   );
 }
 
-export default ViewAll;
+export default SortAZ;
