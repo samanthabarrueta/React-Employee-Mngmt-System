@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-import Wrapper from "../Wrapper";
+import Wrapper from '../Wrapper';
 import { Container, Row, Col } from 'react-bootstrap';
-import employees from "../.././models/employees.json";
-import SearchForm from "../SearchForm";
-import EmployeeCard from "../EmployeeDetails";
-import Button from "../Button";
+import employees from '../.././models/employees.json';
+import SearchForm from '../SearchForm';
+import EmployeeCard from '../EmployeeDetails';
+import Button from '../Button';
 
 class EMSContainer extends Component {
 
   state = {
     employees: employees,
-    search: ""
+    search: ''
   };
 
   handleInputChange = event => {
@@ -21,7 +21,7 @@ class EMSContainer extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log("searched:" + this.state.search)  
+    console.log('searched:' + this.state.search)  
     this.searchEmployees(this.state.search)    
   }
 
@@ -73,7 +73,7 @@ class EMSContainer extends Component {
             
             
             {this.state.employees.map(employeeResults => (<EmployeeCard
-            name = {employeeResults.firstName + " " + employeeResults.lastName}
+            name = {employeeResults.firstName + ' ' + employeeResults.lastName}
             role = {employeeResults.role}
             phoneNumber = {employeeResults.phoneNumber}
             emailAddress= {employeeResults.emailAddress}
