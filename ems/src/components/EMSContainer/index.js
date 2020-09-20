@@ -4,8 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import employees from "../.././models/employees.json";
 import SearchForm from "../SearchForm";
 import EmployeeCard from "../EmployeeDetails";
-import SortButton from "../SortButton";
-import ViewAllButton from "../ViewAllButton";
+import Button from "../Button";
 
 class EMSContainer extends Component {
 
@@ -62,11 +61,14 @@ class EMSContainer extends Component {
             /> 
             
             <Row>
-            <ViewAllButton 
-            viewAllEmployees={this.viewAllEmployees}
-            /><SortButton 
-            sortEmployees={this.sortEmployees}
-            /> 
+            <Button 
+            onClick={this.viewAllEmployees}>
+                View All
+            </Button>
+            <Button 
+            onClick={this.sortEmployees}>
+                Sort Alphabetically
+            </Button> 
             </Row>
             
             
