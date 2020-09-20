@@ -1,6 +1,6 @@
 import React from "react";
 
-function ViewAll(props) {
+function Button(props) {
   return (
     <button onClick={props.onClick} className="btn btn-primary">
     {props.children}
@@ -8,4 +8,4 @@ function ViewAll(props) {
   );
 }
 
-export default ViewAll;
+export default Button;

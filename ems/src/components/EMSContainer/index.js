@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import Wrapper from '../Wrapper';
 import { Container, Row, Col } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import employees from '../.././models/employees.json';
 import SearchForm from '../SearchForm';
 import EmployeeCard from '../EmployeeDetails';
@@ -51,24 +52,32 @@ class EMSContainer extends Component {
 
   render() {
     return (   
-      <Container>
-        <Wrapper>        
-          <Col>
-            <SearchForm 
-            value={this.state.search}
-            handleInputChange={this.handleInputChange}
-            handleFormSubmit={this.handleFormSubmit}
-            /> 
+      <Container>      
+        <Col>
+            <Row>
+                <Col>
+                    <SearchForm 
+                    value={this.state.search}
+                    handleInputChange={this.handleInputChange}
+                    handleFormSubmit={this.handleFormSubmit}
+                    /> 
+                </Col> 
+                <Col>
+                    <Button onClick={this.handleFormSubmit}>
+                        <FontAwesomeIcon icon={faSearch} />
+                    </Button>
+                </Col>
+            </Row>
             
             <Row>
-            <Button 
-            onClick={this.viewAllEmployees}>
-                View All
-            </Button>
-            <Button 
-            onClick={this.sortEmployees}>
-                Sort Alphabetically
-            </Button> 
+                <Button 
+                onClick={this.viewAllEmployees}>
+                    View All
+                </Button>
+                <Button 
+                onClick={this.sortEmployees}>
+                    Sort Alphabetically
+                </Button> 
             </Row>
             
             
@@ -80,7 +89,6 @@ class EMSContainer extends Component {
             key= {employeeResults.id}
             /> )) }
           </Col>
-        </Wrapper>
       </Container>  
       
     );
