@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Dropdown, DropdownButton } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import employees from '../.././models/employees.json';
@@ -74,10 +74,10 @@ class EMSContainer extends Component {
                 onClick={this.viewAllEmployees}>
                     View All
                 </Button>
-                <Button 
-                onClick={this.sortEmployees}>
-                    Sort Alphabetically
-                </Button> 
+
+                <DropdownButton id="dropdown-item-button" title="Sort By">
+                <Dropdown.Item as="button" onClick={this.sortEmployees}>Name</Dropdown.Item>
+                </DropdownButton>
             </Row>
             
             
