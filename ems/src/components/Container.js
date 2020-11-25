@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import { Container, Row, Col, Dropdown, DropdownButton } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import SearchForm from '../SearchForm';
-import EmployeeCard from '../EmployeeDetails';
-import Button from '../Button';
-import employees from '../.././models/employees.json';
+import SearchForm from './SearchForm';
+import EmployeeCard from './EmployeeCard';
+import Button from './Button';
+import employees from '../models/employees.json';
 
 class EMSContainer extends Component {
 
